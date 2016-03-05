@@ -1,0 +1,55 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+		<script type="text/javascript">
+			var Promise = function(affair){
+				this.affair = affair || function(o){
+					return o;
+				}	
+				this.allAffairs = [];
+			}
+			Promise.prototype.then = function(nextAffair){
+				if (this.state == "resloves"){
+					return this._fire(promise, nextAffair);
+				} else {
+					return this._push(promise, nextAffair);
+				}
+			}
+			Promise.prototype._fire = function(nextPromise, nextAffair){
+				var nextResult._fire = nextAffair(this.result);
+			  if (nextResult instanceof Promise){
+		      nextResult.then(function(obj){
+		        nextPromise.resolve(obj);
+		      });
+		    }else{
+		      nextPromise.resolve(nextResult);
+		    }	
+			}
+			Promise.prototype.resolve = function(obj){
+				if (this.state != "pending") {
+        	throw "流程已完成，不能再次开启流程！";
+    		}
+    		this.state = "resloved";
+    		this.result = this.affair(obj);
+			}
+			Promise.prototype.resolve = function (obj){
+				if (this.state != "pending") {
+					throw "流程已完成，不能再次开启流程！";
+				}
+				this.state = "resloved";
+				// 执行该事务，并将执行结果寄存到 Promise 管理器上
+				this.result = this.affair(obj);
+				for (var i = 0, len = this.allAffairs.length; i < len; ++i){
+					// 往后执行事务
+					var affair = this.allAffairs[i];
+					this._fire(affair.promise, affair.affair);
+				}
+				return this;
+			};
+		</script>
+</html>
