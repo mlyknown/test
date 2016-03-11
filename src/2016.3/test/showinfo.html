@@ -1,0 +1,71 @@
+<html>
+<style type="text/css">
+	.arrow{
+		position: absolute;
+	}
+	.arrow-top{
+		border-left: 10px solid transparent;  /* 左边框的宽 */  
+    border-right: 10px solid transparent; /* 右边框的宽 */  
+    border-bottom: 180px solid red; /* 下边框的长度|高,以及背景色 */  
+    width: 0;
+    height: 0;
+    left: 10px;
+    position: relative;
+	}
+	.arrow-up {  
+    border-left: 20px solid transparent;  /* 左边框的宽 */  
+    border-right: 20px solid transparent; /* 右边框的宽 */  
+    border-top: 20px solid red; /* 下边框的长度|高,以及背景色 */  
+	}
+	.main{position: relative;}
+	.main > section{position: absolute;}
+	.main .p1{left: 300px} 
+	.main .p1 .arrow{transform:rotate(45deg)} 
+	.main .p1 a{left:-80px;}
+	.main .p2 {left: 400px} 
+	.main .p2 .arrow{transform:rotate(10deg)} 
+	.main .p2 a{left:-30px}
+	.main .p3 {left: 530px} 
+	.main .p3 .arrow{transform:rotate(-10deg)} 
+	.main .p3 a{left:10px}
+	.main .p4 {left: 650px} 
+	.main .p4 .arrow{transform:rotate(-45deg)} 
+	.main .p4 a{left:65px}
+	.main a{top: 200px;position: relative;}
+</style>
+<title>个人查询页面</title>
+<body>
+    <div class="main" style="width:960px; margin:0 auto; height:auto;">
+        <div style="text-align:center;"><img src="images/dlam.jpg" height="200" width="200"></div>
+        <section class="p1">
+	        <div class="arrow">
+							<div class="arrow-top"></div>	
+							<div class="arrow-up"></div>	
+					</div>
+        	<a href=person.html>个人信息</a>
+        </section>
+		    <section class="p2">
+	        <div class="arrow">
+							<div class="arrow-top"></div>	
+							<div class="arrow-up"></div>	
+					</div>
+		   		<a href=dianxin.html>电信信息</a>
+		   	</section>
+		    <section class="p3">
+	        <div class="arrow">
+							<div class="arrow-top"></div>	
+							<div class="arrow-up"></div>	
+					</div>
+		    	<a href=kuaidi.html>快递信息</a>
+		    </section>
+		    <section class="p4">
+	        <div class="arrow">
+							<div class="arrow-top"></div>	
+							<div class="arrow-up"></div>	
+					</div>
+		    	<a href=gouwu.html>购物信息</a>
+		    </section>
+    </div>
+
+</body>
+</html>

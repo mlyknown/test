@@ -16,7 +16,11 @@
     my.AddPhoto = function () {
         //添加内部代码  
     };
-    
+  var oldAddPhotoMethod = my.AddPhoto;
+
+    my.AddPhoto = function () {
+        // 重载方法，依然可通过oldAddPhotoMethod调用旧的方法
+    };
 
     my.Name = privateName;
     my.AddTopic = function (data) {
