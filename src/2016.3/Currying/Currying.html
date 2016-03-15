@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+	//step1
+	// function loc (a) {
+ //    return function(b){
+ //        return function(c){
+ //            console.log(a+'-'+b+'-'+c);
+ //        }
+ //    }
+	// }
+	// var Zhejiang = loc('浙江');
+	// var Hangzhou = Zhejiang('杭州');
+
+	// var Xihu = Hangzhou('西湖区');           //浙江-杭州-西湖区
+	// var Yuhang = Hangzhou('余杭区');         //浙江-杭州-余杭区
+	// var Lucheng = Zhejiang('温州')('鹿城区'); //浙江-温州-鹿城区
+
+//step2
+	function curry(fn) {
+    var outerArgs = Array.prototype.slice.call(arguments, 1);
+    return function() {
+        var innerArgs = Array.prototype.slice.call(arguments),
+            finalArgs = outerArgs.concat(innerArgs);
+        return fn.apply(null, finalArgs);
+    };
+}
+
+//一个普通函数
+function loc(a,b,c){
+    console.log(a+'-'+b+'-'+c);
+}
+
+var workIn = curry(loc,'浙江','杭州','余杭区');
+workIn();// >>> 浙江-杭州-余杭区
+
+var zj = curry(loc,'浙江');
+var city = curry(zj,'杭州');
+
+city('余杭区');    //>>> 浙江-杭州-余杭区
+city('上城区');    //>>> 浙江-杭州-上城区
+zj('温州','鹿城区');//>>> 浙江-温州-鹿城区
+
+</script>
+</body>
+</html>
