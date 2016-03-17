@@ -1,0 +1,75 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1><a href="https://github.com/lifesinger/blog/issues/113#issuecomment-197354963">从 JavaScript 数组去重谈性能优化</a></h1>
+
+
+
+<script type="text/javascript">
+	var var arr = ['a', 'b', 'c', '1', 0, 'c', 1, '', 1, 0];
+
+	//step1
+	function unique(arr) {
+		var ret = [];
+	  for (var i = 0; i < arr.length; i++) {
+	    var item = arr[i]
+	    if (ret.indexOf(item) === -1) {
+	      ret.push(item)
+	    }
+	  }
+
+	  return ret
+	}
+	console.log(unique(arr));
+
+	//step2
+	var indexOf = [].indexOf ? 
+	  	function(arr, item){
+	  		return arr.indexOf(item);
+	  	} : 
+	  	function(arr, item){
+	  		for (var i = arr.length - 1; i >= 0; i--) {
+	  			if (arr[i] === item){
+	  				return i;
+	  			}
+	  		}
+	  		return -1;
+	  	}
+	function unique(arr) {
+	  var ret = []
+
+	  for (var i = 0; i < arr.length; i++) {
+	    var item = arr[i]
+	    if (ret.indexOf(item) === -1) {
+	      ret.push(item)
+	    }
+	  }
+
+	  return ret
+	}
+	console.log(unique(arr));
+	
+	//step3
+	function unique(arr) {
+  var ret = []
+  var hash = {}
+
+  for (var i = 0; i < arr.length; i++) {
+    var item = arr[i]
+    var key = typeof(item) + item
+    if (hash[key] !== 1) {
+      ret.push(item)
+      hash[key] = 1
+    }
+  }
+  return ret
+	}
+	console.log(unique(arr));
+</script>
+
+
+</body>
+</html>

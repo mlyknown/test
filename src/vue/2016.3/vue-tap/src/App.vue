@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    xx
+    <div v-tap='test(2, $event)' a="hi">cccccccc</div>
+      <div v-tap='test(2, $event)'>3213213213</div>
   </div>
 </template>
 
@@ -9,11 +12,19 @@ import Hello from './components/Hello'
 export default {
   components: {
     Hello
+  },
+  methods:{
+    test: function(i, e){
+      debugger
+      alert(e, i);
+    }
   }
+
 }
 </script>
 
 <style>
+
 html {
   height: 100%;
 }
