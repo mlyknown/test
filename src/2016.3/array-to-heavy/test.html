@@ -80,31 +80,31 @@
 	  return Object.keys(obj)
 	}
 	console.log(unique(arr));
-	
+
 	//step5
 	function unique(arr) {
-  var ret = []
-  var hash = {}
+		debugger
+	  var ret = []
+	  var hash = {}
 
-  for (var i = 0; i < arr.length; i++) {
-    var item = arr[i]
-    var key = typeof(item) + item
-    if(!hash.hasOwnProperty(key))
-      hash[key] = [];
-    var found = false;
-    for(var i = 0; i<hash[key].length; i++) {
-      if(hash[key]===item) {
-        found = true; break;
-      }
-    }
-    if(!found) {
-      hash[key].push(item);
-      ret.push(item);
-    }
-  }
-
-  return ret
-}
+	  for (var i = 0; i < arr.length; i++) {
+	    var item = arr[i]
+	    var key = typeof(item) + item
+	    if(!hash.hasOwnProperty(key))
+	      hash[key] = [];
+	    var found = false;
+	    for(var i = 0; i<hash[key].length; i++) {
+	      if(hash[key]===item) {
+	        found = true; break;
+	      }
+	    }
+	    if(!found) {
+	      hash[key].push(item);
+	      ret.push(item);
+	    }
+	  }
+	  return ret;
+	}
 	console.log(unique(arr));
 </script>
 
