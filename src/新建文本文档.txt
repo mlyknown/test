@@ -1,0 +1,11 @@
+js执行函数时会默认完成以上的步骤，你可以把直接调用函数理解为一种语法糖
+比如
+
+    function say(word) {
+       console.log(world);
+    }
+    say("Hello world");
+
+    say.call(window, "Hello world");
+以上可以把say("Hello world")看做是say.call(window,"Hello world")的语法糖。
+这个结论非常关键
