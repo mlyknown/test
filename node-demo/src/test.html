@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<a href="https://segmentfault.com/a/1190000004649040">WebSocket的简单介绍及应用</a>
+<script type="text/javascript">
+	var socket = new WebSocket("ws://localhost:8080/guest");
+
+socket.onopen = function(openEvent) {
+    console.log("WebSocket conntected.");
+};
+
+socket.onmessage = function(messageEvent) {
+    var data = messageEvent.data,
+        dataObject = JSON.parse(data);
+    console.log("Guest at " + dataObject.time + ": " + dataObject.guest);
+};
+
+socket.onerror = function(errorEvent) {
+    console.log("WebSocket error: ", errorEvent);
+};
+
+socket.onclose = function(closeEvent) {
+    console.log("WebSocket closed.");
+};
+</script>
+</body>
+</html>
