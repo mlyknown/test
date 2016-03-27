@@ -1,0 +1,32 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<a href="http://www.jqsite.com/notes/1603191818.html">Javascript aop(面向切面编程)之around(环绕)</a>
+
+<script type="text/javascript">
+	advice = function(originalFunc){
+ return function() {
+  console.log("before function");
+  originalFunc();
+  console.log("after function");
+ }
+}
+var obj = {
+ foo: function(){
+  console.log(this.name);
+ },
+ name: "obj"
+}
+
+keepContext = function() {
+ return obj['foo'].call(obj);
+}
+
+obj.foo = advice(keepContext);
+</script>
+</body>
+</html>

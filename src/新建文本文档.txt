@@ -21,3 +21,20 @@ js执行函数时会默认完成以上的步骤，你可以把直接调用函数理解为一种语法糖
 
 
   Object setter https://segmentfault.com/q/1010000004670616?_ea=687630
+
+
+  count = +count;数字
+
+
+  http://course.tianmaying.com/node#course-toc
+  http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html
+  https://github.com/guan6/vue-onlySlider-x
+  http://www.jqsite.com/
+  https://github.com/xiaoyunchen/webpack
+  https://segmentfault.com/a/1190000004466407
+  http://fequan.com/2016/#ppt
+  http://www.imooc.com/view/637
+  https://segmentfault.com/q/1010000004670616
+  http://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=402459103&idx=1&sn=8762f9b4617b02741ac89908ba09ed67&scene=0#wechat_redirect
+  http://f2e.souche.com/blog/
+  https://segmentfault.com/a/1190000004034059?utm_source=Weibo&utm_medium=shareLink&utm_campaign=socialShare#articleHeader7

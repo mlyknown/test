@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<a href="http://www.cnblogs.com/souvenir/p/5066879.html#3336281">avaScript深拷贝初探
+ </a>
+
+ <script type="text/javascript">
+ 	var util={
+        getType:function(o){    //判断对象类型
+            var _t;
+            return ((_t = typeof(o)) == "object" ? o==null && "null" || Object.prototype.toString.call(o).slice(8,-1):_t).toLowerCase();
+        },
+        deepClone:function(source){    //深拷贝
+            var self=this;    //保存当前对象引用
+            var destination=self.getType(source);
+            destination=destination==='array'?[]:(destination==='object'?{}:source);
+            for (var p in source) {
+                if (self.getType(source[p]) === "array" || self.getType(source[p]) === "object") {
+                    destination[p] = self.getType(source[p]) === "array" ? [] : {};
+                    destination[p]=arguments.callee.call(self, source[p]);    //使用call修改函数的作用域
+                } else {
+                    destination[p] = source[p];
+                }
+            }
+            return destination;
+        }
+    };
+
+    var obj1={
+        attr:100
+    };
+
+    
+    var obj2=util.deepClone(obj1);    //将obj1深拷贝到obj2
+    obj2.attr=200;    //修改obj2的属性值
+    console.log(obj1.attr);    //obj1属性值未发生变化
+
+ </script>
+</body>
+</html>
