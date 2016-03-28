@@ -1,14 +1,28 @@
 <template>
   <div id="app">
+  <slider :control="true" :dot="true" :auto="true" dot-float="center">
+  <slide v-for="item in items">
+  <li><div>{{$index}}</div></li>
+  </slide>
+</slider>
   </div>
 </template>
 
 <script>
+import slider from './slider'
+import slide from './slide'
 import Hello from './components/Hello'
 
 export default {
+  data: function(){
+    return {
+      items:[1,2,3]
+    }
+  }, 
   components: {
-    Hello
+    Hello,
+     'slider': slider,
+    'slide': slide
   }
 }
 </script>

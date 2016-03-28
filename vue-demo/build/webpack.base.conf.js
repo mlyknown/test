@@ -51,6 +51,10 @@ module.exports = {
         loader: 'json'
       },
       {
+        test: /\.less$/,
+        loader: 'less-loader'
+      },
+      {
         test: /\.html$/,
         loader: 'vue-html'
       },
