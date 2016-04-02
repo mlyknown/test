@@ -42,3 +42,9 @@ js执行函数时会默认完成以上的步骤，你可以把直接调用函数理解为一种语法糖
   http://www.nowcoder.com/ta/front-end
   http://www.nowcoder.com/ta/js-assessment?page=1
   http://segmentfault.com/a/1190000000754325
+  http://www.jianshu.com/p/6e64e1d0313d
+  https://segmentfault.com/a/1190000004815957
+  http://blog.h5jun.com/post/inherits.html
+  http://www.alloyteam.com/
+  http://blog.h5jun.com/post/left-pad.html
+  http://codestar.alloyteam.com/q2/

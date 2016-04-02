@@ -1,0 +1,33 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>从本质认识JavaScript的原型继承和类继承</title>
+</head>
+<body>
+<a href="http://blog.h5jun.com/post/inherits.html">从本质认识JavaScript的原型继承和类继承</a>
+
+<script type="text/javascript">
+	function Vector2D(x, y){
+  this.x = x;
+  this.y = y;
+	}
+	Vector2D.prototype.length = function(){
+	  return Math.sqrt(this.x * this.x + this.y * this.y);
+	}
+
+	function Vector3D(x, y, z){
+	  Vector2D.call(this, x, y);
+	  this.z = z;
+	}
+	Vector3D.prototype = new Vector2D();
+
+	Vector3D.prototype.length = function(){
+	  return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
+	}
+
+	var p = new Vector3D(1, 2, 3);
+	console.log(p.x, p.y, p.z, p.length(), p instanceof Vector2D);
+	
+</script>
+</body>
+</html>
