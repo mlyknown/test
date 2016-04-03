@@ -10,14 +10,26 @@ var Bar = Vue.extend({
   template: '<p>This is bar!</p>{{x}}',
   props:['x'],
 })
-
+var router = Vue.extend({
+  template: '<div id="xpp"></div>'
+})
+var router1 = Vue.extend({
+  template: '<div id="xpp1"><router-view></router-view></div>'
+})
+new Vue({
+ el: 'body',
+ components: {
+ router: router
+ }
+ });
+ 
 
 var App = Vue.extend({})
 var router = new VueRouter()
 
 
 router.map({
-  '/foo': {
+  '/': {
     component: Foo,
 	 subRoutes: {
       '/bar': {
@@ -26,4 +38,4 @@ router.map({
 	 }
   }
 })
-router.start(App, '#app')
+router.start(router1, '#xpp')
