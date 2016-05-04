@@ -48,10 +48,10 @@ Object.keys(proxyTable).forEach(function (context) {
   app.use(proxyMiddleware(context, options))
 })
 
-module.exports = app.listen(8080, function (err) {
+module.exports = app.listen(8081, function (err) {
   if (err) {
     console.log(err)
     return
   }
-  console.log('Listening at http://localhost:8080')
+  console.log('Listening at http://localhost:8081')
 })

@@ -1,5 +1,5 @@
-jsִ�к���ʱ��Ĭ��������ϵĲ��裬����԰�ֱ�ӵ��ú�������Ϊһ���﷨��
-����
+jsÖ´ÐÐº¯ÊýÊ±»áÄ¬ÈÏÍê³ÉÒÔÉÏµÄ²½Öè£¬Äã¿ÉÒÔ°ÑÖ±½Óµ÷ÓÃº¯ÊýÀí½âÎªÒ»ÖÖÓï·¨ÌÇ
+±ÈÈç
 
     function say(word) {
        console.log(world);
@@ -7,24 +7,24 @@ jsִ�к���ʱ��Ĭ��������ϵĲ��裬����԰�ֱ�ӵ��ú�������Ϊһ���﷨��
     say("Hello world");
 
     say.call(window, "Hello world");
-���Ͽ��԰�say("Hello world")������say.call(window,"Hello world")���﷨�ǡ�
-������۷ǳ��ؼ�
+ÒÔÉÏ¿ÉÒÔ°Ñsay("Hello world")¿´×öÊÇsay.call(window,"Hello world")µÄÓï·¨ÌÇ¡£
+Õâ¸ö½áÂÛ·Ç³£¹Ø¼ü
 
 
 
-ԭ��ֻ�����ں����У�ԭ�����ſ��Դ������������������У�
-����Դ�ӡһ��obj1.prototype��ԭ�ͣ���obj1.__proto__��ԭ��������
+Ô­ÐÍÖ»´æÔÚÓÚº¯ÊýÖÐ£¬Ô­ÐÍÁ´²Å¿ÉÒÔ´æÔÚÓÚËùÓÐÒýÓÃÀàÐÍÖÐ£¡
+Äã¿ÉÒÔ´òÓ¡Ò»ÏÂobj1.prototype£¨Ô­ÐÍ£©£¬obj1.__proto__£¨Ô­ÐÍÁ´£©¡£
 
-�ȸ�PageSpeed�ŶӵĲ��Ա�����30~50KB��ѹ������ÿ��JavaScript�ļ���С�ĺ��ʷ�Χ���ȴ�����ܹ�����С�ļ������������ӳ٣�����ȷ���������ֲ�ʽ��ִ�С�
+¹È¸èPageSpeedÍÅ¶ÓµÄ²âÊÔ±íÃ÷£¬30~50KB£¨Ñ¹Ëõºó£©ÊÇÃ¿¸öJavaScriptÎÄ¼þ´óÐ¡µÄºÏÊÊ·¶Î§£º¼È´óµÀÁËÄÜ¹»¼õÉÙÐ¡ÎÄ¼þ´øÀ´µÄÍøÂçÑÓ³Ù£¬»¹ÄÜÈ·±£µÝÔö¼°·Ö²ãÊ½µÄÖ´ÐÐ¡£
 page 176.
 
-  :checked        ��ѡ���ѡ��ѡ�С�
+  :checked        µ¥Ñ¡¿ò»ò¸´Ñ¡¿ò±»Ñ¡ÖÐ¡£
 
 
   Object setter https://segmentfault.com/q/1010000004670616?_ea=687630
 
 
-  count = +count;����
+  count = +count;Êý×Ö
 
 
   http://course.tianmaying.com/node#course-toc
@@ -39,7 +39,7 @@ page 176.
   http://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=402459103&idx=1&sn=8762f9b4617b02741ac89908ba09ed67&scene=0#wechat_redirect
   http://f2e.souche.com/blog/
   https://segmentfault.com/a/1190000004034059?utm_source=Weibo&utm_medium=shareLink&utm_campaign=socialShare#articleHeader7
-  CNODE �ͻ��� ����
+  CNODE ¿Í»§¶Ë ¹ÙÍø
   http://www.nowcoder.com/ta/front-end
   http://www.nowcoder.com/ta/js-assessment?page=1
   http://segmentfault.com/a/1190000000754325
@@ -50,3 +50,6 @@ page 176.
   http://blog.h5jun.com/post/left-pad.html
   http://codestar.alloyteam.com/q2/
 https://github.com/JsAaron/vue-analysis
+ajax阻止重复提交aop
+判断代码是否为未定义和null时候最好使用！运算符。
+从javascript变量存储的三部分角度思考，当变量的值为undefined时候，那么该变量只有栈区的标示符，如果我们对undefined的变量进行赋值操作，如果值是基本类型，那么栈区的值就有值了，如果栈区是对象那么堆区会有一个对象，而栈区的值则是堆区对象的地址，如果变量值是null的话，我们很自然认为这个变量是对象，而且是个空对象，
