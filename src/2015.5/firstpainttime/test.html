@@ -1,0 +1,51 @@
+<!doctype>
+<html>
+<head>
+  <meta charset=utf-8>
+  <script>
+    var f= function(){
+console.log(2,Date.now());
+      var firstPaintTime = Date.now() - performance.timing.navigationStart;
+
+      console.log(
+         'get first paint time by raf:',
+         firstPaintTime
+        );
+		 requestAnimationFrame(f);
+    }
+    requestAnimationFrame(f);
+    window.onload = function(){
+      requestAnimationFrame(function(){
+        var firstPaintTime =
+           window.chrome.loadTimes().firstPaintTime * 1000 -
+           window.performance.timing.navigationStart;
+
+        console.log(
+           'get first paint time by chrome.loadTimes().firstPaintTime:',
+           firstPaintTime
+          );
+      });
+    };
+  </script>
+</head>
+<body>
+xx
+  <script>
+    var start = Date.now();
+    while(Date.now() - start < 3000){} // white screen
+	console.log(1,Date.now())
+  </script>
+  xx
+    <script>
+	console.log(3,Date.now());
+    var start = Date.now();
+    while(Date.now() - start < 4000){} // white screen
+  </script>
+  <script src="./test.js"></script>
+  xx
+      <script>	
+    var start = Date.now();
+    while(Date.now() - start < 4000){} // white screen
+	  </script>
+</body>
+</html>
