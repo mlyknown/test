@@ -53,3 +53,5 @@ https://github.com/JsAaron/vue-analysis
 ajax阻止重复提交aop
 判断代码是否为未定义和null时候最好使用！运算符。
 从javascript变量存储的三部分角度思考，当变量的值为undefined时候，那么该变量只有栈区的标示符，如果我们对undefined的变量进行赋值操作，如果值是基本类型，那么栈区的值就有值了，如果栈区是对象那么堆区会有一个对象，而栈区的值则是堆区对象的地址，如果变量值是null的话，我们很自然认为这个变量是对象，而且是个空对象，
+
+知乎JavaScript精华第三页
