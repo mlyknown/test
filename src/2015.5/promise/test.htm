@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>一道关于Promise应用的面试题</title>
+</head>
+<body>
+<a href="http://web.jobbole.com/86150/">一道关于Promise应用的面试题</a>
+<script type="text/javascript">
+function red(){
+    console.log('red');
+}
+function green(){
+    console.log('green');
+}
+function yellow(){
+    console.log('yellow');
+}
+ 
+// var tic = function(timmer, cb){
+//     return new Promise(function(resolve, reject) {
+//         setTimeout(function() {
+//             cb();
+//             resolve();
+//         }, timmer);
+//     });
+// };
+ 
+// var d = new Promise(function(resolve, reject){resolve();});
+// var step = function(def) {
+//     def.then(function(){
+//         return tic(3000, red);
+//     }).then(function(){
+//         return tic(2000, green);
+//     }).then(function(){
+//         return tic(1000, yellow);
+//     }).then(function(){
+//         step(def);
+//     });
+// }
+ 
+// step(d);
+
+
+
+var tic = function(timmer, str){
+    return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            console.log(str);
+            resolve(1);
+        }, timmer);
+    });
+};
+
+
+function *gen(){
+    yield tic(3000, 'red');
+    yield tic(1000, 'green');
+    yield tic(2000, 'yellow');
+}
+
+var iterator = gen();
+var step = function(gen,  ){
+    var s = iterator.next();
+    if (s.done) {
+        step(gen, gen());
+    } else {
+        s.value.then(function() {
+            step(gen, iterator);
+        });
+    }
+}
+
+step(gen, iterator);
+</script>
+</body>
+</html>

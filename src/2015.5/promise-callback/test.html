@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>https://cnodejs.org/topic/571740cca10228e950e812e2#572b6d8c7a370c6a177863bc</title>
+</head>
+<body>
+<a href="https://cnodejs.org/topic/571740cca10228e950e812e2#572b6d8c7a370c6a177863bc">如何把 Callback 接口包装成 Promise 接口</a>
+
+<script type="text/javascript">
+  function cb(err,i) {
+    console.log("cb");
+  }
+  function f(i,cb){
+    console.log("before setTimeout");
+    setTimeout(cb, 2000);
+    console.log("after setTimeout");
+    return i;
+  }
+  // var i = f(10, cb);
+
+  let promisify = (fn, receiver) => {
+    return (...args) => {
+      return new Promise((resolve, reject) => {
+        fn.apply(receiver, [...args, (err, res) => {
+          return err ? reject(err) : resolve(res);
+        }]);
+      });
+    };
+  };
+
+  module.exports = fn => {  
+    return (...args) => {
+      return new Promise((resolve, reject) => {
+        args.push((err, result, ...other) => {
+          err ? reject(err) : resolve(result, other)
+        })
+        fn(...args)
+      })
+    }
+  }
+
+  var ff = promisify(f, null);
+  ff(10).then(cb) .then(function(){
+    console.log(1234);
+  });
+
+</script>
+</body>
+</html>

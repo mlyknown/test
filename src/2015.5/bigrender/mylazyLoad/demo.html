@@ -1,0 +1,794 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<style>
+.redbox{
+	width:150px;
+	height:150px;
+	background:red;
+}
+.bluebox{
+	width:150px;
+	height:150px;
+	background:blue;
+}
+textarea{
+	display:none;
+}
+#loadbox{
+	width:800px;
+	height:700px;
+	overflow:scroll;
+}
+#loadmain{
+	width:1900px;
+}
+#loadmain:after{
+	content:".";
+	display:block;
+	clear:both;
+	overflow:hidden;
+	visibility:hidden;
+	height:0;
+}
+.lazy-loading{
+	width:150px;
+	height:150px;
+	float:left;
+	margin:1px;
+}
+#ajaxbox div{
+	width:700px;
+	margin:0 auto;
+}
+#ajaxbox div .load{
+	text-align:center;
+	line-height:30px;
+	background:#666;
+}
+</style>
+<script type="text/javascript" src="javascript/jslibrary.js"></script>
+<script type="text/javascript" src="javascript/lazyload.js"></script>
+</head>
+
+<body>
+	<p style="height:200px; width:1000px; padding:20px;" id="top">
+		往下滚动<br />&nbsp;||<br />&nbsp;||<br />&nbsp;||<br />&nbsp;||<br />&nbsp;||<br />&nbsp;||<br />&nbsp;\/
+	</p>
+<div id="loadbox">
+<div id="loadmain">
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div id="redbox1" onclick="alert('2')" class="redbox"&gt;1&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;2&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;3&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;4&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;5&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;6&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;7&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;8&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;9&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;10&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;11&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;12&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;13&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;14&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;15&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;16&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;17&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;18&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;19&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;20&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;21&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;22&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;23&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;24&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;25&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;26&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;27&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;28&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;29&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;30&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load">
+		<textarea>&lt;div class="redbox"&gt;计算机的疯狂拉升的理发师&lt;/div&gt;</textarea>
+	</div>
+	<div class="lazy-loading" id="load2">
+		<textarea>&lt;div class="bluebox"&gt;&lt;/div&gt;</textarea>
+	</div>
+</div>
+</div>
+<div id="ajaxload">
+
+</div>
+<div id="ajaxbox">
+<div><p class="load" style="display:none;">加载中...</p></div>
+<div><p class="load" style="display:none;">加载中...</p></div>
+</div>
+<!--<p style="height:200px;"></p>-->
+</body>
+</html>

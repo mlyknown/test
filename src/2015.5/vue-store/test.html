@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.js"></script>
+  <title>store</title>
+</head>
+
+<body>
+<div id="vmA"><p>vmA:{{sharedState.message}}</p><button @click="action()">vmA</button></div>
+<div id="vmB"><p>vmB:{{sharedState.message}}</p></p><button @click="action()">vmB</button></div>
+
+<script type="text/javascript">
+  var store = {
+  state: {
+    message: 'Hello!'
+  },
+  actionA: function () {
+    this.state.message = 'action A triggered'
+  },
+  actionB: function () {
+    this.state.message = 'action B triggered'
+  }
+}
+
+var vmA = new Vue({
+  el:"#vmA",
+  data: {
+    privateState: 'vmA',
+    sharedState: store.state
+  },
+  methods:{
+    action(){
+      store.actionA();
+    }
+  }
+})
+
+var vmB = new Vue({
+  el:"#vmB",
+  data: {
+    privateState: {},
+    sharedState: store.state.message
+  },
+  methods:{
+    action(){
+      store.actionB();
+    }
+  }
+})
+</script>
+
+</body>
+</html>

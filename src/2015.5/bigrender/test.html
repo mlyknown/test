@@ -1,0 +1,45 @@
+<<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+  init: function(config) {
+    var cls = config.cls;
+    this.threshold = config.threshold ? config.threshold : 0;
+   
+    this.els = Array.prototype.slice.call(T.getElementsByClassName(cls));
+    this.fn = this.pollTextareas.bind(this);
+   
+    this.fn();
+    T.addEvent(window, "scroll", this.fn);
+    T.addEvent(window, "resize", this.fn);
+    T.addEvent(doc.body, "touchMove", this.fn);
+  }
+
+  pollTextareas: function() {
+   
+    // 需延迟加载的元素已经全部加载完
+    if (!this.els.length) {
+      T.removeEvent(window, "scroll", this.fn);
+      T.removeEvent(window, "resize", this.fn);
+      T.removeEvent(doc.body, "touchMove", this.fn);
+      return;
+    }
+   
+    // 判断是否需要加载
+    for (var i = this.els.length; i--; ) {
+      var ele = this.els[i];
+   
+      if (!this.inView(ele)) 
+        continue;
+   
+      this.insert(ele);
+      this.els.splice(i, 1);
+    }
+  }
+</script>
+</body>
+</html>
