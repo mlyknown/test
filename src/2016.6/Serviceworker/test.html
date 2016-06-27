@@ -1,0 +1,53 @@
+<<!DOCTYPE html>
+<html>
+<head>
+  <title>http://web.jobbole.com/86372/</title>
+</head>
+<body>
+<a href="http://web.jobbole.com/86372/">利用 Service worker 创建一个非常简单的离线页面</a>
+
+<script type="text/javascript">
+// Register the service worker
+// 注册 service worker
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+    // Registration was successful
+    // 注册成功
+    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+}).catch(function(err) {
+    // registration failed :(
+    // 注册失败 :(
+    console.log('ServiceWorker registration failed: ', err);
+   });
+}
+
+</script>
+<script type="text/javascript">
+this.addEventListener('fetch', event => {
+  // request.mode = navigate isn't supported in all browsers
+  // request.mode = naivgate 并没有得到所有浏览器的支持
+  // so include a check for Accept: text/html header.
+  // 因此对 header 的 Accept：text/html 进行核实
+  if (event.request.mode === 'navigate' || (event.request.method === 'GET' && event.request.headers.get('accept').includes('text/html'))) {
+        event.respondWith(
+          fetch(event.request.url).catch(error => {
+              // Return the offline page
+              // 返回离线页面
+              return caches.match(offlineUrl);
+          })
+    );
+  }
+  else{
+        // Respond with everything else if we can
+        // 返回任何我们能返回的东西
+        event.respondWith(caches.match(event.request)
+                        .then(function (response) {
+                        return response || fetch(event.request);
+                    })
+            );
+      }
+});
+</script>
+</script>
+</body>
+</html>

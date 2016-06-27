@@ -40,6 +40,26 @@
       this.els.splice(i, 1);
     }
   }
+
+insert: function(ele) {
+  var parent = ele.parentNode
+    , txt = this.decodeHTML(ele.innerHTML)
+    , matchStyles = this.extractCode(txt, true)
+    , matchScripts = this.extractCode(txt);
+ 
+  parent.innerHTML = txt
+    .replace(new RegExp("]*>([\S\s]*?)\s*>", "img"), "")
+    .replace(new RegExp("]*>([\S\s]*?)\s*>", "img"), "");
+ 
+  if (matchStyles.length) 
+    for (var i = matchStyles.length; i --;) 
+      this.evalStyles(matchStyles[i]);
+ 
+  // 如果延迟部分需要做 loading 效果
+  parent.className = parent.className.replace("loading", "");
+ 
+  if (matchScripts.length) 
+    for (var i = 0, len = matchScripts.length; i
 </script>
 </body>
 </html>

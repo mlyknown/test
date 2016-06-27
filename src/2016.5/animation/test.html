@@ -1,0 +1,78 @@
+<<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<script src="http://s3.qhimg.com/!bfe40c57/bezier-easing.min.js">
+</script>
+<style>
+  #block{
+    position:absolute;
+    left: 150px;
+    top: 200px;
+    width: 20px;
+    height: 20px;
+    background: #0c8;
+    text-align: center;
+    border-radius: 50%;
+    animation: anim 2.0s linear 0s forwards;
+  }
+  @keyframes anim{
+    0%{border-radius: 50%}
+    50%{border-radius: 0; background: #c80;}
+    100%{border-radius: 20%; transform:scale(2.0); background: #08c;}
+  }
+</style>
+<div id="block"></div>
+<script>
+  function Animator(duration, progress, easing){
+    this.duration = duration;
+    this.progress = progress;
+    this.easing = easing || function(p){return p};
+  }
+  
+  Animator.prototype = {
+    start: function(finished){
+      var startTime = Date.now();
+      var duration = this.duration,
+          self = this;
+      
+      requestAnimationFrame(function step(){
+        var p = (Date.now() - startTime) / duration;
+        var next =  true;
+        
+        if(p < 1.0){
+          self.progress(self.easing(p), p);
+        }else{
+          if(typeof finished === 'function'){
+            next = finished() === false;
+          }else{
+            next = finished === false;
+          }
+          
+          if(!next){
+            self.progress(self.easing(1.0), 1.0);
+          }else{
+            startTime += duration;
+            self.progress(self.easing(p), p);
+          }
+        }
+        
+        if(next) requestAnimationFrame(step);
+      });
+    }
+  };
+  
+  var easing = BezierEasing(0.68, -0.55, 0.265, 1.55);
+  var a1 = new Animator(2000, function(ep,p){
+  var x = 150 + 200 * ep;
+    block.style.left = x + 'px';
+  }, easing);
+  
+  block.addEventListener('webkitAnimationEnd', function(){
+    a1.start();
+  });
+</script>
+</body>
+</html>
