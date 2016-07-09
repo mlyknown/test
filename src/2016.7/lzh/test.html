@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>彩票</title>
+  <style type="text/css">
+    *{margin: 0;padding: 0;} 
+    html {
+      color: #000;
+      background: #fff;
+      overflow-y: scroll;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    html * {
+      outline: none;
+      -webkit-text-size-adjust: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ins,
+    a {
+      text-decoration: none;
+    }
+    .dn{display: none;}
+  </style>
+  <style type="text/css">
+    .container{width: 1000px;margin: 0 auto;}
+    span{line-height: 50px;}
+    dl ,dt ,dd{border: 1px solid #c1c1c1}
+    .one dt{}
+    .one dd{}
+    .one span{display: inline-block;width: 10%;text-align: center;}
+    .two dt{}
+    .two dd{}
+    .two span{display: inline-block;width: 10%;text-align: center;}
+    .three dt{}
+    .three dd{}
+    .three span{display: inline-block;width: 1  0%;text-align: center;}
+
+  </style>
+</head>
+<body class="container">
+ 
+  <header><h1 id="btn">足球</h1></header>
+  <section>
+    <h2>法国VS冰岛（2016年7月4日03：00)</h2>
+    <dl class="one" id="one">
+      <dt><span>胜</span><span>胜</span><span>胜</span></dt>
+      <dd><span>1.45</span><span>1.45</span><span>1.45</span></dd>
+    </dl>
+
+    <dl class="two dn" id="two">
+      <dt><span>1.45</span><span>让球</span><span>赔率</span><span>大小球</span><span>赔率(DA)</span><span>赔率(XIAO)</span></dt>
+      <dd><span>法国</span><span>1</span><span>1</span><span>1</span><span>1</span><span>1</span></dd>
+    </dl>
+
+    <dl class="three dn"  id="three">
+      <h3>法国VS冰岛（波胆）</h3>
+      <dt><span>比分</span><span>比分</span></dt>
+      <dd><span>0-0</span><span>11</span></dd>
+    </dl>
+  </section>
+  <script type="text/javascript">
+    var secList = Array.from(document.querySelectorAll("section"));
+    for (var i = secList.length - 1; i >= 0; i--) {
+       var btn = secList[i].getElementById("btn");
+       var two = secList[i].getElementById("two");
+       var three = secList[i].getElementById("three");
+       btn.addEventListener("click",function(){
+         two.classList.toggle("dn");
+         three.classList.toggle("dn");
+       alse)
+    }
+   
+  </script>
+</body>
+</html>
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/static/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>EJS Welcome dasdasd <%= title %></p>
+
+  </body>
+</html> -->
+
+
+
+  <header><h1 id="btn">足球</h1></header>
+  <% for(var i=0; i<data.length; i++) {%>
+    <li></li>
+    <section>
+      <h2><%= data[i].h2.title %> <%= data[i].h2.time %></h2>
+      <dl class="one" id="one">
+        <dt><span>胜</span><span>胜</span><span>胜</span></dt>
+            <dd>
+              <% for(var i=0; i<data.one.dd; i++) {%>
+                <span><%= data.one.dd[i] %></span>
+              <% } %>  
+            </dd>
+        <% } %>  
+      </dl>
+      <dl class="two" id="two">
+        <dt><span>1.45</span><span>让球</span><span>赔率</span><span>大小球</span><span>赔率(DA)</span><span>赔率(XIAO)</span></dt>
+            <dd>
+              <% for(var i=0; i<data.two.dd; i++) {%>
+                <span><%= data.two.dd[i] %>/span>
+              <% } %>  
+            </dd>
+        <% } %>  
+      </dl>
+      <dl class="three" id="three">
+        <dt><span>比分</span><span>比分</span></dt>
+            <dd>
+              <% for(var i=0; i<data.three.dd; i++) {%>
+                <span><%= data.three.dd[i] %></span>
+              <% } %>  
+            </dd>
+        <% } %>  
+      </dl>
+    </section>
+  <% } %>  
+
+
+
+
+  
+  
+  <dl class="three" id="three">
+        <dt><span>比分</span><span>比分</span></dt>
+            <dd>
+              <% for(var j=0; j<data[i].three.dd.length; j++) {%>
+                <span><%= data.three.dd[j] %></span>
+              <% } %>  
+            </dd>
+        <% } %>  
+      </dl>

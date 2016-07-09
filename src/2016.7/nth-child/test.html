@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<style type="text/css">
+  li{display: none;}
+  li:nth-child(n+2){
+    display: block;
+  }
+  li:empty{background: red;}
+
+
+  .test3 span{position: relative;}
+  .test3 span a{position: relative;z-index: 2}
+  .test3 span a:hover,.test3 span a:active{z-index: 4}
+  .test3 span input{background: red;border: 0;cursor: pointer;position: absolute;top: -1px;left: 0;width: 1010%;height: 301%;z-index: 3;}
+  .text3 span input:focus{background: blue;border: 0;z-index: 3}
+</style>
+<body>
+
+<li>5</li>
+<li>4</li>
+<li> </li>
+<li>2</li>
+<li>1</li>
+
+<div class="test3">
+  <span><input type="text" value="" readonly="true"></input> <a href="http:www.baidu.com">dddd</a></span>
+
+</div>
+</body>
+</html>
