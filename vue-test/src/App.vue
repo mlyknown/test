@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <echart></echart>
+    <!--<hello></hello>
+    <echart></echart>-->
+    <a v-link="{ name: 'xx', params: { id: id },activeClass: 'class' }" :class="class">User</a>
+    <div @click="toggleShow" :class="[isShow? 'icon-1':'icon-2' ]">hahah</div>
+    <router-view></router-view>
+    
   </div>
 </template>
 
@@ -9,9 +14,27 @@ import Hello from './components/Hello'
 import Echart from './components/echart'
 
 export default {
+  data: function () {
+    return {
+      id:"2423",
+      isShow:true
+    }
+  },
+  methods:{
+    toggleShow: function() {
+      this.isShow = !this.isShow
+    }
+  },
   components: {
     Hello,
     Echart
+  },
+  computed:{
+    class(){
+      const a = "icon-"
+      
+      return a+this.$route.params.id;
+    }
   }
 }
 </script>

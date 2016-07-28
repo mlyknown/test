@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <img src="../../static/13.png"/>
+    <img src="../assets/1.png"/>
   </div>
 </template>
 
@@ -8,7 +10,17 @@
 export default {
   data () {
     return {
-      msg: 'Hello World!'
+      msg: 'Hello World!',
+      id:21
+    }
+  },
+  route: {
+    data: function (transition) {
+      debugger
+      var id = transition.to.params.id
+      return {
+        id
+      }
     }
   }
 }
