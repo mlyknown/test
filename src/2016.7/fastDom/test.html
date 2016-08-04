@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<a href="http://wilsonpage.co.uk/preventing-layout-thrashing/" >Preventing 'layout thrashing'</a>
+<button onclick="onClick()">button</button>
+
+<div id="element1">1</div>
+<div id="element2">2</div>
+<div id="element3">3</div>
+
+<script type="text/javascript">
+
+ function do1(){
+    var element1 = document.getElementById("element1");
+      // Read
+    var h1 = element1.clientHeight;
+    // Write (invalidates layout)
+    element1.style.height = (h1 + 0.5) + 'px';
+
+    var element2 = document.getElementById("element2");
+    // Read (triggers layout)
+    var h2 = element2.clientHeight;
+    // Write (invalidates layout)
+    element2.style.height = (h2 + 0.5) + 'px';
+
+    var element3 = document.getElementById("element3");
+    // Read (triggers layout)
+    var h3 = element3.clientHeight;
+    // Write (invalidates layout)
+    element3.style.height = (h3 + 0.5) + 'px';
+ }
+function do2(){
+  // Read
+   var element1 = document.getElementById("element1");
+var h1 = element1.clientHeight;
+var element2 = document.getElementById("element2");
+var h2 = element2.clientHeight;
+ var element3 = document.getElementById("element3");
+var h3 = element3.clientHeight;
+
+// Write (invalidates layout)
+element1.style.height = (h1 + 0.5) + 'px';
+element2.style.height = (h2 + 0.5) + 'px';
+element3.style.height = (h3 + 0.5) + 'px';
+}
+
+  function onClick() {
+
+  for (var i = 10000; i >= 0; i--) {
+    do1()
+  }
+   
+ }
+
+
+</script>
+
+</body>
+</html>

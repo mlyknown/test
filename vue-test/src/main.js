@@ -16,6 +16,7 @@ const router = new VueRouter();
 router.map({
     '/xx/:id': {
       name:"xx",
+      title: "红包日历",
         component: Hello
     }
 })

@@ -1,9 +1,12 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <img src="../../static/13.png"/>
-    <img src="../assets/1.png"/>
-  </div>
+    
+  <li v-for="item in arr" @click="onClick($event, item)" track-by="$index">
+    {{ item }} 
+  </li>
+
+ 
 </template>
 
 <script>
@@ -11,17 +14,20 @@ export default {
   data () {
     return {
       msg: 'Hello World!',
-      id:21
+      id:21,
+      arr:[3,4,5]
     }
   },
   route: {
     data: function (transition) {
-      debugger
-      var id = transition.to.params.id
-      return {
-        id
-      }
+     console.log(transition)
     }
+  },
+  methods:{
+      onClick(i, v){
+      console.log(v);
+         this.$router.go({ name: 'xx', params: { id: 123 }})
+      }
   }
 }
 </script>
